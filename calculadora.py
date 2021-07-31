@@ -39,7 +39,6 @@ class CalEstandar(Calculadora):
 
     
 class calCientifica(Calculadora):
-                        #radio  #lado
     def _init_(self, numero1, numero2):
         super()._init_(numero1, numero2)
         
