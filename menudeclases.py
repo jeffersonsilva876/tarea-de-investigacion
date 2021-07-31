@@ -113,7 +113,7 @@ class Intermedio(Basico):
                 acu2 = acu2 + x
                 
         if acu1 == numero2 and acu2 == numero1:
-            print("Los numeros {} y {} son numeros amigos.".format(numero1, numero2))
+            print("Los numeros {} y {} si son numeros amigos.".format(numero1, numero2))
         else:
             print("Los numeros {} y {} no son numeros amigos.".format(numero1, numero2))
             
