@@ -4,19 +4,19 @@ class Calculadora:
         self.num2=numero2
         
     def suma(self):
-        total_Sum= self.num1 + self.num2
+        Suma= self.num1 + self.num2
         print("La suma de los numeros {} y {} es de: {}".format(self.num1,self.num2,total_Sum))
     
     def resta(self):
-        total_Res= self.num1 - self.num2
+        Resta= self.num1 - self.num2
         print("La resta de los numeros {} y {} es de: {}".format(self.num1, self.num2, total_Res))
     
     def multiplicacion(self):
-        total_Mul= self.num1 * self.num2
+        Mult= self.num1 * self.num2
         print("La multiplicación de los numeros {} y {} es de: {}".format(self.num1,self.num2,total_Mul))
                 
     def division(self):
-        total_Div=self.num1 / self.num2
+        Div=self.num1 / self.num2
         print("La division de los numeros es de: {}".format(total_Div))
         
 class CalEstandar(Calculadora):
@@ -25,11 +25,11 @@ class CalEstandar(Calculadora):
         
         
     def multiplicacion(self):
-        Resultado= self.num1 * self.num2
-        return Resultado
+        Result= self.num1 * self.num2
+        return Result
     
     def exponente(self):
-        total_Exp = self.num1**self.num2
+        Exp= self.num1**self.num2
         print("la respuesta es: ",total_Exp)
 
     def valorAbsoluto(sefl,numero3):
