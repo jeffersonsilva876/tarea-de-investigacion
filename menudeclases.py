@@ -1,4 +1,3 @@
-
 class Basico:
     def __init__(self):
         pass
@@ -6,7 +5,6 @@ class Basico:
     def numerosN(self,n):
         for i in range(1,n+1):
             print(i)
-            
     
     def multiplo(self, numero1, numero2):
         if numero1 % numero2 == 0:
@@ -27,7 +25,7 @@ class Basico:
             if numero % i == 0:
                 contador += 1
         if contador == 2:
-            print("Es un numero primo")
+            print("Si es un numero primo")
         else:
             print("No es un numero primo")
 
@@ -39,7 +37,7 @@ class Basico:
         if acu == numero:
             print("Numero Perfecto")
         else:
-            print("Numero no es perfecto")
+            print("El numero no es perfecto")
             
         
 class Intermedio(Basico):
@@ -113,9 +111,7 @@ class Intermedio(Basico):
                 acu2 = acu2 + x
                 
         if acu1 == numero2 and acu2 == numero1:
-            print("Los numeros {} y {} si son numeros amigos.".format(numero1, numero2))
+            print("Los numeros {} y {} son numeros amigos.".format(numero1,numero2))
         else:
-            print("Los numeros {} y {} no son numeros amigos.".format(numero1, numero2))
-            
+            print("Los numeros {} y {} no son numeros amigos.".format(numero1,numero2))
 
-    
