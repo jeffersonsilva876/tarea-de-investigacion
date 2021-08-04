@@ -1,16 +1,13 @@
 class TratamientoListas():
     
-    def __init__(self,lista,diccionario,tupla):
+    def __init__(self,lista):
         self.lista=lista
-        self.diccionario=diccionario
-        self.tupla=tupla
 
     def PresentarLista(self):
         print("Recorrer y presentar los datos de una lista")
         for list in self.lista:
             print(list,end='   ')
-        print() 
-        
+        print()         
     
     def buscarLista(self,buscado):
         print("Buscar un valor en una lista")
@@ -20,10 +17,9 @@ class TratamientoListas():
                 enc=True
                 break
         if enc==True:
-           print("Su valor si se encuentra en la lista, se encuentra en la posicion: {}".format(pos))
+           print("Su valor si se encuentra en la lista, se encuentra en la posicion: {}".format(pos+1))
         else:
-            print("Su valor no se encuentra en la lista")
-
+            print("Su valor no se ha encuentrado en la lista")  
     
     def ListaFactorial(self):
         print("Retornar una lista con los factoriales")
@@ -37,6 +33,7 @@ class TratamientoListas():
     
     def listaPrimo(self):
         print("Retornar una lista de números primos")
+        listaprimo=[]
         for pos,i in enumerate(self.lista): 
             if i >= 0:
                 primo=True
@@ -47,23 +44,22 @@ class TratamientoListas():
                         primo+=1
                     divisor+=1
                 if primo ==True:
-                    print("Numero",i,"es primo")
-                else:
-                    print("Numero",i,"no es primo")
+                    listaprimo.append(i)
             else:
-                print("Su lista contiene numeros y letras")    
+                print("Su nmumero es negativo ")
         print()
+        print("lista de numeros Primos: ")    
+        print(listaprimo)  
     
     def listaNotas(self,listaNotasDicccionario):
         print("Recorrer una lista de diccionario con notas de alumnos")
         for nom in listaNotasDicccionario:
             for clave,valor in nom.items():
                 print(clave,":",valor,end="  ")
-            print()
-  
+            print()  
     
     def insertarLista(self,valor,posicion):
-        print("Insertar un dato en una Lista dada la Posición")
+        print("Insertar un dato en una Lista dada su Posición")
         print()
         auxlista=[]        
         for pos,ele in enumerate(self.lista):
@@ -77,7 +73,7 @@ class TratamientoListas():
             auxlista.append(self.lista[j])
         self.lista=auxlista
         return self.lista
-  
+
     
     def eliminarLista(self,lista):
         print("Eliminar todas las ocurrencias en una Lista")
@@ -95,38 +91,49 @@ class TratamientoListas():
             lista3.append(valor)
         return (lista3)   
 
+            
     def retornaValorLista(self,lista):
         print(" Retornar cualquier valor de una lista eliminándolo ")
         print()
-        n=int(input("que valor quieres eliminar: "))      
+        n=int(input("Que valor quieres eliminar: "))      
         for x,i in enumerate(lista):
             if i == n:
                 del lista[x]  
         return (lista)
-
-  
+    
     def copiarTuplaLista(self):
         print(" Copiar cada elemento de una tupla en una lista ")
-        aux1=list(self.tupla)
+        aux1=list(self.lista)
         return aux1      
-  
     
     def vueltoLista(self,listaClientesDiccionario):
         print(" Dar el vuelto a varios clientes ")
-        pass
-        
-         
-pos=2
-diccionario=[{'nombre':'jefferson', 'nota':90},{'nombre':'carlos','nota':80},{'nombre':'luisa','nota':90}]
-lista=[-2,-2,5,3,40,50]
-tupla=(22,23,24,25)
-listaClientesDiccionarios=[{'cliente':'jefferson','deuda':90},{'cliente':'carlos','deuda':80},{'cliente':'robert','deuda':50}]
-ord1= TratamientoListas(lista,diccionario,tupla)
-ord1.PresentarLista()
-#rd1.buscarLista(40)
+        pago=float(input("Ingrese pago del cliente: "))
+        nom=(input("Ingrese nombre del cliente: ")).capitalize()
+        print(nom)
+        for x in listaClientesDiccionario:
+            for clave, valor in x.items():     
+                if clave == nom:
+                    if valor > 0:
+                        cambio=pago-valor
+                        print(cambio)
+                    else:
+                        cambio=pago
+        if cambio <= -1:                
+            print(" Mantiene una deuda de:",cambio,"$ con nosotros")
+        else:
+            print("su cambio es: ",cambio, "$ no tiene deuda con nosotros")    
+ 
+
+# lista=[1,2,3,4,5]
+# lista=(22,23,24,25)
+# listaClientesDiccionarios=[{'Josue':100},{'Maria':80},{'Ruth':50}]
+# ord1= TratamientoListas(lista)
+#ord1.PresentarLista()
+#ord1.buscarLista(40)
 # ord1.ListaFactorial()
-# ord1.listaPrimo()
-# ord1.listaNotas(diccionario)
+#ord1.listaPrimo()
+# ord1.listaNotas(listaClientesDiccionarios)
 # print(ord1.insertarLista(600,5))
 # print()
 # lista1 = []       
@@ -143,5 +150,15 @@ ord1.PresentarLista()
 #     lista2.append(valor)
 # aux=lista2
 # print(ord1.retornaValorLista(aux))
-#print(ord1.copiarTuplaLista())
-#print(ord1.vueltoLista(listaClientesDiccionarios))
+# print(ord1.copiarTuplaLista())
+# diccionario={}
+# lista=[]
+# num=int(input("ingrese cuantos diccionarios desea ingresar: "))
+# for x in range(num):
+#     clave=(input("ingrese su clave para el diccionario: ")).capitalize()
+#     valor=int(input("ingrese el valor de la clave para el diccionario: "))
+
+#     diccionario[clave]=valor
+#     lista.append(diccionario)
+#     diccionario={} 
+# ord1.vueltoLista(lista)
