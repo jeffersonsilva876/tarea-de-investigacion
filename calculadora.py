@@ -52,8 +52,9 @@ class calCientifica(Calculadora):
         area = PI * (self.num1**2)
         return area
     
-    def areaCuadrado(self):
-        return self.num2 ** 2
+    def areaCuadrado(lado):
+        area=lado**2
+        return area
     
 
 # cal = calCientifica(1,2,3,4)
